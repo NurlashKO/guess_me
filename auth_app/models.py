@@ -4,7 +4,7 @@ from django.db.models import TextField
 
 
 class User(AbstractUser):
-    uuid = TextField(max_length=256, null=False, blank=False, default=uuid4)
+    token = TextField(max_length=256, null=False, blank=False, default=uuid4)
 
     def __str__(self):
         return 'id: ' + str(self.id) + ', username: ' + self.username

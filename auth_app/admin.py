@@ -14,7 +14,7 @@ class UserCreationForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('username', 'id', 'email', 'first_name', 'last_name', 'uuid',)
+        fields = ('username', 'id', 'email', 'first_name', 'last_name', 'token',)
 
     def clean_password2(self):
         # Check that the two password entries match
@@ -64,7 +64,7 @@ class UserAdmin(BaseUserAdmin):
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
         (_('Personal info'), {'fields': ('first_name', 'last_name', 'email',
-                                         'uuid',)}),
+                                         'token',)}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
